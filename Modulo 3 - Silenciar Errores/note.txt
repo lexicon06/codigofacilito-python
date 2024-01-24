@@ -1,0 +1,1 @@
+we hide errors here but it's not recommended, still worth to learn
