@@ -3,7 +3,7 @@ def deco_validator(func):
         if a % 2 != 0 and b % 2 != 0:
             return func(a, b)
         else:
-            raise ValueError("Number is even")
+            raise TypeError("Number is even")
 
     return wrapper
 
