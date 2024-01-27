@@ -1,3 +1,64 @@
 Flask es un micro framework de
 Python diseñado para crear
 páginas web dinámicas.
+
+
+
+
+Usamos el decorador
+route() para vincular una
+funcion para una URL.
+
+como decoradores
+
+
+@app.route('/')
+def home():
+    return "Hello, World!"
+
+
+
+Métodos https
+
+HTTP define un conjunto de 
+métodos de petición para
+indicar la acción que
+desea realizar para un
+recurso determinado
+
+
+
+get,post,put,delete,patch, delete
+
+
+
+Las plantillas son archivos que contienen datos estaticos asi como
+marcadores 
+
+
+
+Para redirigir a un usuario a otro
+endpoint, utilice la funcion redirect();
+para abortar una solicitud antes de tiempo con un codigo de error,
+utilice la funcion abort()
+
+
+
+when we use delete we return as best practice
+
+204 No Content
+
+
+if resource does not exist
+
+404 not found
+
+
+
+
+Existe un objeto llamado
+session que permite
+almacenar informacion
+especifica de un usuariode una solicitud a otra. 
+estaticosse implementa encima delas cookies 
+para usted y firma las cookies criptograficamente
