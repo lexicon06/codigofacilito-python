@@ -15,3 +15,9 @@ WHERE firstName IN ('Diane', 'Mary', 'Jeff');
 
 --IN it's like to do
 --where firstName = 'Diane' or firstName ='Mary' etc
+
+
+SELECT COUNT(firstName), COUNT(DISTINCT firstName)
+FROM employees;
+
+--We can count distinct results
