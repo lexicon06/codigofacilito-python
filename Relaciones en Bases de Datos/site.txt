@@ -1,2 +1,3 @@
 https://tech.io/playgrounds/123318/sql-facilito
 https://www.mysqltutorial.org/
+https://www.sqlservertutorial.net/
