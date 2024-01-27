@@ -1,0 +1,7 @@
+SELECT JSON_ARRAY(userName, userLastName, userId) 
+FROM Users;
+
+
+--returns
+--["Juan", "Perez", 3]
+--["Perez", null, 2]
