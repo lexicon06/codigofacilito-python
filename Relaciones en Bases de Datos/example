@@ -21,3 +21,12 @@ SELECT COUNT(firstName), COUNT(DISTINCT firstName)
 FROM employees;
 
 --We can count distinct results
+
+
+SELECT firstName, COUNT(firstName)
+FROM employees
+GROUP BY firstName
+HAVING COUNT(firstName) > 1 AND COUNT(firstName) < 10;
+
+
+--We can use the elements that we select with having to compare them but not with the where
