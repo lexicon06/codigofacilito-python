@@ -13,5 +13,5 @@ WHERE firstName IN ('Diane', 'Mary', 'Jeff');
 
 
 
---it's like to do
+--IN it's like to do
 --where firstName = 'Diane' or firstName ='Mary' etc
