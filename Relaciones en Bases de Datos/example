@@ -45,3 +45,40 @@ SELECT JSON_ARRAYAGG(JSON_OBJECT('Name', customerName, 'Country', country, 'City
 FROM customers;
 
 --more jason practice
+
+
+
+-- Create a table called students with a primary key on id
+CREATE TABLE students (
+  id INT PRIMARY KEY,
+  name VARCHAR(50),
+  age INT,
+  grade VARCHAR(2)
+);
+
+-- Create a table called courses with a foreign key on student_id
+CREATE TABLE courses (
+  id INT PRIMARY KEY,
+  student_id INT,
+  name VARCHAR(50),
+  credits INT,
+  FOREIGN KEY (student_id) REFERENCES students (id)
+);
+
+-- Insert some data into the tables
+INSERT INTO students VALUES (1, 'Alice', 18, 'A');
+INSERT INTO students VALUES (2, 'Bob', 19, 'B');
+INSERT INTO students VALUES (3, 'Charlie', 20, 'C');
+
+INSERT INTO courses VALUES (1, 1, 'Math', 3);
+INSERT INTO courses VALUES (2, 2, 'English', 4);
+INSERT INTO courses VALUES (3, 3, 'Science', 3);
+INSERT INTO courses VALUES (4, 1, 'History', 4);
+
+-- Join the two tables on the student_id column
+SELECT s.name, s.grade, c.name AS course
+FROM students s
+INNER JOIN courses c
+ON s.id = c.student_id;
+
+
