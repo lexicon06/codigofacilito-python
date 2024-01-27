@@ -1,0 +1,3 @@
+Flask es un micro framework de
+Python diseñado para crear
+páginas web dinámicas.
