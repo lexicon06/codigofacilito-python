@@ -45,3 +45,8 @@ INFO:werkzeug: * Detected change in 'C:\\Code\\codigofacilito-python\\Introducci
 INFO:werkzeug: * Restarting with stat
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 789-952-809
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2024 23:37:24] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2024 23:37:24] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2024 23:38:14] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2024 23:38:49] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2024 23:38:49] "GET / HTTP/1.1" 200 -
