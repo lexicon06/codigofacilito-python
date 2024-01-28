@@ -80,3 +80,13 @@ haha forget about above error it turns out flash was part of flask and not other
 when implemented pop and flash
 
 json web token check
+
+
+for lil apps and endpoints flask, fastApi
+
+for a more robust monolithic apps we use django
+
+
+microservicios se usa flask
+
+orm flask uses
