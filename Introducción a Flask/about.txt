@@ -4,7 +4,6 @@ páginas web dinámicas.
 
 
 
-
 Usamos el decorador
 route() para vincular una
 funcion para una URL.
@@ -18,9 +17,9 @@ def home():
 
 
 
-Métodos https
+Métodos http
 
-HTTP define un conjunto de 
+HTTP define un conjunto de
 métodos de petición para
 indicar la acción que
 desea realizar para un
@@ -33,7 +32,7 @@ get,post,put,delete,patch, delete
 
 
 Las plantillas son archivos que contienen datos estaticos asi como
-marcadores 
+marcadores
 
 
 
@@ -59,6 +58,25 @@ if resource does not exist
 Existe un objeto llamado
 session que permite
 almacenar informacion
-especifica de un usuariode una solicitud a otra. 
-estaticosse implementa encima delas cookies 
+especifica de un usuariode una solicitud a otra.
+estaticosse implementa encima delas cookies
 para usted y firma las cookies criptograficamente
+
+
+
+add env to gitignore
+
+
+
+homework best practices: https://swagger.io/specification/
+
+dunno why but i add to add suddenly curses
+
+pip install windows-curses
+
+haha forget about above error it turns out flash was part of flask and not other 3rd party library..
+
+
+when implemented pop and flash
+
+json web token check
