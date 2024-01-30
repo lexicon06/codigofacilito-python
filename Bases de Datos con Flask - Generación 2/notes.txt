@@ -36,3 +36,18 @@ en dado caso lo llegarámos a necesitar cambiar de un gestor a otro sin muchos p
 
 
 
+
+
+
+
+Para consultas complejas, que involucren multiples tablas,
+condiciones e inclusive operaciones, es posible que el ORM no
+llegue a generar las sentencias más óptimas para el gestor.
+
+Dependiendo del ORM, es posible que las configuraciones sean un
+poco tediosas., Teniendo que importar, instalar, actualizar,
+generar nuevos archivos etc...
+
+Si no tenemos ningún tipo de conocimientos con SQL y 
+dependamos completamente de un ORM, muy probablemente no
+lleguemos a comprender al cien por ciento las sentencias que estamos creando
