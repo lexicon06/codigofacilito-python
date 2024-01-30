@@ -22,6 +22,20 @@ User.select(
     User.email
 ).where(User.id == 101)
 
+# Eloquent
+
+
+<?php
+$usuarios = App\Usuario::select('nombre', 'steamid', 'imagen')->get();
+
+foreach ($usuarios as $usuario) {
+    echo $usuario->nombre;
+    echo $usuario->steamid;
+    echo $usuario->imagen;
+}
+?>
+
+
 
 La primera ventaja en esta lista, y quizás la más importante, es que al utilizar
 un ORM, como se encuentran diseñados para un lenguaje en particular, no debemos preocuparnos
