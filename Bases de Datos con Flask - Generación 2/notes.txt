@@ -1,0 +1,38 @@
+ORM
+
+-> Active Record (Ruby)
+-> Eloquent (PHP)
+-> Peewee (Python)
+-> SQLAlchemy (Python)
+-> Entity Framework (C#)
+-> Hibernate (Java)
+-> Django propio rm
+
+
+# SQLAlchemy
+
+SELECT id, usernme, email FROM id= 101;
+
+
+# Peewee
+
+User.select(
+    User.id,
+    User.username,
+    User.email
+).where(User.id == 101)
+
+
+La primera ventaja en esta lista, y quizás la más importante, es que al utilizar
+un ORM, como se encuentran diseñados para un lenguaje en particular, no debemos preocuparnos
+tanto por conocer y dominar SQL. Lo cual nos permite enfocarnos al cien por ciento en el lenguaje que estemos utilizando del lado del backend.
+Java, PHP, Python, etc ...
+
+Otra ventaja es que, la mayoría de los ORMs nos permiten
+interactuar con diferentes gestores de base de datos, pudiendo asi,
+en dado caso lo llegarámos a necesitar cambiar de un gestor a otro sin muchos problemas.
+
+
+
+
+
