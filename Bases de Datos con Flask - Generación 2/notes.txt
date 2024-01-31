@@ -49,7 +49,17 @@ en dado caso lo llegarámos a necesitar cambiar de un gestor a otro sin muchos p
 
 
 
+"""
+DataTypes PeeWee
 
+CharField
+TextField
+DateTimeField
+BooleanField
+FloatField
+ForeignKey Field
+Etc..
+"""
 
 
 

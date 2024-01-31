@@ -1,14 +1,4 @@
-"""
-DataTypes PeeWee
 
-CharField
-TextField
-DateTimeField
-BooleanField
-FloatField
-ForeignKey Field
-Etc..
-"""
 
 from os import environ
 
@@ -34,6 +24,11 @@ class User(Model):  # Tables
     class Meta:
         database = db
         db_table = "users"
+
+    @classmethod
+    def create_user(cls, _username, _password):
+        _password = f"cody_{_password}"
+        return User.create(username = _username, password=_password)
 
 
 class Product(Model):
