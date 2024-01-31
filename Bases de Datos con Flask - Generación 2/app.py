@@ -76,6 +76,16 @@ def products_update(id:int):
     return render_template("products/update.html", product=_product)
 
 
+@app.route("/products/delete/<id>", methods=["GET"])
+def products_delete(id:int):
+    _product = Product.get(Product.id == id)
+    _product.delete_instance()
+
+    return redirect(url_for("products"))
+
+
+
+
 if __name__ == "__main__":
     app.run(debug=True, load_dotenv=True)
 
