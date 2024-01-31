@@ -1,5 +1,3 @@
-
-
 from os import environ
 
 from peewee import MySQLDatabase, Model, TextField, DateTimeField, IntegerField, ForeignKeyField, CharField
@@ -27,15 +25,20 @@ class User(Model):  # Tables
 
     @classmethod
     def create_user(cls, _username, _password):
-        _password = f"cody_{_password}"
-        return User.create(username = _username, password=_password)
+        _password = "cody_" + _password
+        return User.create(username=_username, password=_password)
 
 
-class Product(Model):
+# Migrations
+class Product(Model):  # Tables
     name = TextField()
     price = IntegerField()
     user = ForeignKeyField(User, backref="products")
+    created_at = DateTimeField(default=datetime.datetime.now)
 
+    @property
+    def price_format(self):
+        return f"$ {self.price} dollars"
 
     class Meta:
         database = db

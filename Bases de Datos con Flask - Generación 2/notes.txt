@@ -75,3 +75,12 @@ generar nuevos archivos etc...
 Si no tenemos ningún tipo de conocimientos con SQL y 
 dependamos completamente de un ORM, muy probablemente no
 lleguemos a comprender al cien por ciento las sentencias que estamos creando
+
+
+
+
+to run this project you have to have a clean database to avoid problems
+
+
+
+TODO study migration in flask
