@@ -16,5 +16,8 @@ def login():
 @app.route("/success", methods=['GET'])
 def check():
     user = request.args.get("uname")
+    if user != 'fox':
+        return render_template("success.html", usr=user, pwd='No Access')
+    
     password = request.args.get("pwd")
     return render_template("success.html", usr=user, pwd=password)
