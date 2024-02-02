@@ -18,16 +18,25 @@
         font-size: 1rem;
         display: flex;
         justify-content:center;
-        background-image: linear-gradient(to bottom, magenta, cyan);
+        background-image: url('https://wallpapercave.com/download/l4d2-wallpapers-CND5TT5');
+        background-size: cover;
         height:100dvh;
         width:100vw;
+        color:#fff;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .login_wrap{
-        margin-top:30%;
-        padding:1rem;
+        padding-inline:2rem;
+        padding-block:4rem;
         border-radius: 1vmax;
-        border:solid 1px rgba(0,0,0,0.5);
+        border:solid 1px rgba(255,255,255,0.5);
         background-image: linear-gradient(rgba(0,0,0,0,0.5), rgba(0,0,0,0.0));
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
@@ -37,12 +46,14 @@
         display: flex;
         justify-content: space-between;
         font-size: 0.8rem;
+        margin-top:2rem;
     }
 
     input{
         background: none;
         border: none;
         font-size: 1rem;
+        color:#fff;
     }
 
     input:focus{
@@ -55,7 +66,7 @@
     }
 
     .login_input, button{
-        border:solid 1px rgba(0,0,0,0.5);
+        border:solid 1px rgba(255,255,255,0.5);
         border-radius: 100vmax;
         display: flex;
         justify-content: space-around;
@@ -65,15 +76,29 @@
     }
 
     .login_input *::placeholder{
-        color:#000;
+        color:#fff;
     }
 
     .login_input:hover{
         cursor:text;
     }
 
+    input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #ffffff;
+    /*
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px #23232329;
+    */
+}
+
+
+
     button{
-        background-image: linear-gradient(to bottom, yellow, goldenrod);
+        background-color: burlywood;
         font-size: large;
         font-weight: 400;
     }
@@ -81,16 +106,17 @@
 
     a{
         text-decoration: none;
-        color:#000;
+        color:#fff;
         font-weight: bolder;
     }
 
     .login_wrap h2{
+        margin-bottom:2rem;
         display: flex;
         justify-content: center;
         font-size:2rem;
         letter-spacing: 0.1rem;
-        color: #000;
+        color: #fff;
     }
 
     .container{
@@ -104,13 +130,13 @@
     }
 
     button{
-        transition: all 0.4s;
+        transition: all 1s;
+        margin-top:2rem;
     }
 
 
     button:hover{
-        filter: invert();
-        font-weight: bold;
+        background: coral;
         cursor: pointer;
     }
 
@@ -120,16 +146,16 @@
 </style>
 <body>
 
-    <form action="login" method="get">
+    <form action="/success" method="get">
         <div class="login_wrap">
-            <h2>Login Demo</h2>
+            <h2>Fox Login</h2>
             <div class="login_input">
                 <input type="text" name="uname" placeholder="Username" required>
-                <box-icon type='solid' name='user'></box-icon>
+                <box-icon type='solid' name='user' color="white"></box-icon>
             </div>
             <div class="login_input">
                 <input type="password" name="pwd" placeholder="Password" required>
-                <box-icon type='solid' name='lock'></box-icon>
+                <box-icon type='solid' name='lock' color="white"></box-icon>
             </div>
 
             <div class="login_remember_or_forgotten">
@@ -142,7 +168,7 @@
             </button>
 
             <div class="login_more">
-                <p>Don't you have an Account?</p>
+                <p>Not a member yet?</p>
                 <a href="#">Register</a>
             </div>
         </div>
