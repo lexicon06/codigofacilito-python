@@ -12,12 +12,16 @@ def home():
 def login():
     return render_template("login.html")
 
+@app.route("/register")
+def register():
+    return render_template("register.html")
 
-@app.route("/success", methods=['GET'])
+
+@app.route("/success", methods=['POST'])
 def check():
-    user = request.args.get("uname")
+    user = request.form.get("uname")
     if user != 'fox':
         return render_template("success.html", usr=user, pwd='No Access')
     
-    password = request.args.get("pwd")
+    password = request.form.get("pwd")
     return render_template("success.html", usr=user, pwd=password)
