@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flask Store</title>
+  </head>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <body class="bg-white">
+    {% include 'header.html' %}
+
+    <main class="flex flex-col nowrap justify-center items-center m-10">
+        <form action='/login' method='post' class='bg-white shadow-lg rounded px-8 pt-6 pb-8 mb-4 border w-80'>
+        <div class='mb-4'>
+          <label class='block text-gray-700 text-sm font-bold mb-2' for='email'>Email:</label>
+          <input class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' type='email' id='email' name='email' required>
+        </div>
+        <div class='mb-6'>
+          <label class='block text-gray-700 text-sm font-bold mb-2' for='password'>Password:</label>
+          <input class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline' type='password' id='password' name='password' required>
+        </div>
+        <div class='flex items-center justify-between'>
+          <input class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' type='submit' value='Login'>
+        </div>
+      </form>
+
+      <p class="text-gray-700 text-sm">New on Plush? <a href="/register"><span class="text-blue-500 font-bold underline">Create an account</span></a></p>
+      
+</main>
+
+  {% include 'footer.html' %}
+</body>
+</html>
