@@ -48,6 +48,10 @@ class Product(Model):
     @property
     def price_format(self):
         return f"$ {self.Price} dollars"
+    @classmethod
+    def add_product(cls, _name, _price, _photo):
+        return Product.create(ProductName = _name, Price = _price, photoUrl = _photo)
+
 
 
 

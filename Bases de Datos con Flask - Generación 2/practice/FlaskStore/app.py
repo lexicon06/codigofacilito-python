@@ -33,7 +33,9 @@ def login():
             flash('Email or password is incorrect')
             return redirect(url_for('login'))
 
-
+@app.route("/panel", methods=['GET', 'POST'])
+def panel():
+    return render_template("panel.html")
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
