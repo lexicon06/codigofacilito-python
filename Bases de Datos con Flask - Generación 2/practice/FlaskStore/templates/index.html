@@ -1,72 +1,91 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Flask Store</title>
-</head>
+  </head>
 
-<script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-
-
-<body>
+  <body>
     {% include 'header.html' %}
-    
-    <main class="flex" id="products">
-        
-        <div class="border-2 border-gray w-40 rounded-lg m-4 flex flex-col justify-between">
-            <img src="https://th.bing.com/th/id/OIP.ewbTc1iasCGj3I45aukv-wHaI9?rs=1&pid=ImgDetMain" alt="peluche" class="p-3">
-            <div>
-                <div class="text-[red] font-bold flex ml-2">
-                    Peluche Osito
-                </div>
-                <div class="text-[green] font-bold mb-3 ml-2">
-                    $5.99
-                </div> 
-            </div>
-        </div>
 
+    <main class="grid grid-cols-4 gap-2" id="products">
+      <script>
+        let items = [
+          {
+            name: "Peluche Osito",
+            price: 5.99,
+            img: "https://th.bing.com/th/id/OIP.ewbTc1iasCGj3I45aukv-wHaI9?rs=1&pid=ImgDetMain",
+          },
+          {
+            name: "Peluche Pochita",
+            price: 5.99,
+            img: "https://th.bing.com/th/id/OIP.-ePpdCm_akyqx58cLxkV7QHaHa?rs=1&pid=ImgDetMain",
+          },
+          {
+            name: "Eren Jaeger",
+            price: 5.99,
+            img: "https://th.bing.com/th/id/OIP.SljYP2AdLLF8udtQpChVUwHaHa?rs=1&pid=ImgDetMain",
+          },
+        ];
 
-        
-        <div class="border-2 border-gray w-40 rounded-lg m-4 flex flex-col justify-between">
-            <img src="https://th.bing.com/th/id/OIP.-ePpdCm_akyqx58cLxkV7QHaHa?rs=1&pid=ImgDetMain" alt="peluche" class="p-3">
-            <div>
-                <div class="text-[red] font-bold flex ml-2">
-                    Peluche Pochita
-                </div>
-                <div class="text-[green] font-bold mb-3 ml-2">
-                    $5.99
-                </div> 
-            </div>
-        </div>
+        items.push({
+          name: "Peluche Pikachu",
+          price: 6.99,
+          img: "https://m.media-amazon.com/images/I/81SXy7b+C+L._AC_SX466_.jpg",
+        });
+        items.push({
+          name: "Peluche Mario",
+          price: 7.99,
+          img: "https://media.gamestop.com/i/gamestop/10118413/Super-Mario-Bros.-Mario-Plush",
+        });
+        items.push({
+          name: "Peluche Sonic",
+          price: 8.99,
+          img: "https://i5.walmartimages.com/asr/51968e7b-ccea-427f-8c95-3744aec6c8a4_1.7d8ea15fc4752b8b7bf193e64401f20c.jpeg",
+        });
+        items.push({
+          name: "Peluche Totoro",
+          price: 9.99,
+          img: "https://resize.cdn.otakumode.com/ex/2158.2158/shop/product/d78493a8354e42eeb726e2aa1a4618d3.jpg",
+        });
 
+        items.push({
+          name: "Peluche Harry Potter",
+          price: 11.99,
+          img: "https://th.bing.com/th/id/OIP.rk59JN8abbPM-8A0dfXxjQHaHa?rs=1&pid=ImgDetMain",
+        });
+        items.push({
+          name: "Peluche Frodo Baggins",
+          price: 12.99,
+          img: "https://i5.walmartimages.com/asr/ce01ff4e-ddbe-42db-b7e5-f73128a56f9d_1.33de81573968b7152f564a35d9ade9cd.png?odnWidth=1000&odnHeight=1000&odnBg=ffffff",
+        });
+        items.push({
+          name: "Peluche Darth Vader",
+          price: 13.99,
+          img: "https://th.bing.com/th/id/OIP.-BHBLDolo71Pvf0RKOoweQAAAA?rs=1&pid=ImgDetMain",
+        });
+        items.push({
+          name: "Peluche Sherlock Holmes",
+          price: 14.99,
+          img: "https://cdn.shopify.com/s/files/1/2217/5851/products/s-l1600_af66cd68-580b-485a-95ba-ecdc0b21069c.jpg?v=1614776965",
+        });
+        items.push({
+          name: "Peluche Wonder Woman",
+          price: 15.99,
+          img: "https://th.bing.com/th/id/OIP.1L_jmaMDlAJVc1c_3--aaQHaHk?rs=1&pid=ImgDetMain",
+        });
 
-        <div class="border-2 border-gray w-40 rounded-lg m-4 flex flex-col justify-between">
-            <img src="https://th.bing.com/th/id/OIP.SljYP2AdLLF8udtQpChVUwHaHa?rs=1&pid=ImgDetMain" alt="peluche" class="p-3">
-            <div>
-                <div class="text-[red] font-bold flex ml-2">
-                    Eren Jaeger
-                </div>
-                <div class="text-[green] font-bold mb-3 ml-2">
-                    $5.99
-                </div> 
-            </div>
-        </div>
+        items.push({
+            name:"L4D2 Tank Plush",
+            price:14.43,
+            img: "https://th.bing.com/th/id/OIP.VE82EU6pc7hkb9k0Hq8W_AAAAA?rs=1&pid=ImgDetMain",
+        })
 
-        
-        
-<script>
-    let items = [
-        {name:"Peluche Osito", price:5.99, img: "https://th.bing.com/th/id/OIP.ewbTc1iasCGj3I45aukv-wHaI9?rs=1&pid=ImgDetMain"},
-        {name: "Peluche Pochita", price:5.99, img: "https://th.bing.com/th/id/OIP.-ePpdCm_akyqx58cLxkV7QHaHa?rs=1&pid=ImgDetMain"},
-        {name: "Eren Jaeger", price:5.99, img: "https://th.bing.com/th/id/OIP.SljYP2AdLLF8udtQpChVUwHaHa?rs=1&pid=ImgDetMain"}
-    ];
-    
+        var add = "";
 
-    var add = "";
-
-    for(let obj in items){
-
-    add+= `<div class="border-2 border-gray w-40 rounded-lg m-4 flex flex-col justify-between">
+        for (let obj in items) {
+          add += `<div class="border-2 border-gray rounded-lg m-4 flex flex-col justify-between">
             <img src="${items[obj].img}" alt="peluche" class="p-3">
             <div>
                 <div class="text-[red] font-bold flex ml-2">
@@ -77,15 +96,12 @@
                 </div> 
             </div>
         </div>`;
+        }
 
-    }
-
-    document.getElementById("products").innerHTML = add;
-</script>
-
-
+        document.getElementById("products").innerHTML = add;
+      </script>
     </main>
-    
+
     {% include 'footer.html' %}
-</body>
+  </body>
 </html>
