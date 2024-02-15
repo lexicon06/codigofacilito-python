@@ -1,6 +1,6 @@
 from flask import *
 from os import environ
-from database import User
+from database import User, Product
 
 
 app = Flask(__name__)
@@ -35,7 +35,16 @@ def login():
 
 @app.route("/panel", methods=['GET', 'POST'])
 def panel():
-    return render_template("panel.html")
+    if request.method == 'GET':
+       return render_template("panel.html")
+    elif request.method == 'POST':
+        product = request.form['productName'];
+        price = request.form['price'];
+        picture = request.form['photoUrl'];
+        add = Product.add_product(product, price, picture)
+        if add:
+            return redirect(url_for('home'))
+
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
