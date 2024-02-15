@@ -1,16 +1,13 @@
 from peewee import MySQLDatabase, Model, DecimalField, IntegerField, CharField
-from environ import Environ
+from os import environ
 
-
-env = Environ()
-env.read_env()
 
 db = MySQLDatabase(
-    env.get("DB_NAME"),
-    user=env.get("DB_USER"),
-    password=env.get("DB_PASSWORD"),
-    port=int(env.get("DB_PORT")),
-    host=env.get("DB_HOST")
+    database=environ.get("DB_NAME"),
+    user=environ.get("DB_USER"),
+    password=environ.get("DB_PASSWORD"),
+    port=int(environ.get("DB_PORT")),
+    host=environ.get("DB_HOST")
 )
 
 
@@ -18,6 +15,8 @@ class User(Model):
     UserID = IntegerField(primary_key=True)
     Email = CharField(max_length=100)
     Password = CharField(max_length=100)
+    FirstName = CharField(max_length=100)
+    LastName = CharField(max_length=100)
 
     class Meta:
         database = db
@@ -27,6 +26,13 @@ class User(Model):
     def create_user(cls, _email, _password):
         _password = "storeFlask_" + _password
         return User.create(Email=_email, Password=_password)
+    @classmethod
+    def login_user(cls, _email, _password):
+        try:
+            user = User.get(User.Email == _email, User.Password == _password)
+            return user
+        except User.DoesNotExist:
+            return None
 
 
 class Product(Model):
