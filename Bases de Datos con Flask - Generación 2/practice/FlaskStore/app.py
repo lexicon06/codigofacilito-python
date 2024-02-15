@@ -33,7 +33,10 @@ def register():
     if request.method == 'POST':
         email = request.form.get('email')
         password = request.form.get('password')
-        pass
+
+        if email == "fox@gnula.nu" and password == '123':
+            return redirect(url_for('home'))
+
     if request.method == 'GET':
         return render_template("register.html")
 
