@@ -15,6 +15,8 @@ def home():
 
 
 
+
+
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     if request.method == 'GET':
@@ -32,6 +34,10 @@ def login():
         else:
             flash('Email or password is incorrect')
             return redirect(url_for('login'))
+        
+
+
+
 
 @app.route("/panel", methods=['GET', 'POST'])
 def panel():
@@ -44,6 +50,9 @@ def panel():
         add = Product.add_product(product, price, picture)
         if add:
             return redirect(url_for('home'))
+        
+
+
 
 
 @app.route("/register", methods=['GET', 'POST'])
@@ -52,13 +61,14 @@ def register():
         email = request.form.get('email')
         password = request.form.get('password')
 
-        User.create_user(email, password)
-
-        if email == "fox@gnula.nu" and password == '123':
-            return redirect(url_for('home'))
+        if User.create_user(email, password):
+            return redirect(url_for('login'))
 
     if request.method == 'GET':
         return render_template("register.html")
+    
+
+
 
 
 @app.route('/success')
