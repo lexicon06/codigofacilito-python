@@ -51,6 +51,17 @@ class Product(Model):
     @classmethod
     def add_product(cls, _name, _price, _photo):
         return Product.create(ProductName = _name, Price = _price, photoUrl = _photo)
+    @classmethod
+    def display_products(cls):
+        try:
+            products = cls.select()
+            return list(products)
+        except Exception as e:
+            print(f'We have a problem {e}')
+
+        
+
+
 
 
 
