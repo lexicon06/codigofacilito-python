@@ -68,7 +68,10 @@ def register():
         return render_template("register.html")
     
 
-
+@app.route("/api/v1/products", methods = ['GET'])
+def getAllProducts():
+    data = Product.display_products()
+    return jsonify(products = data)
 
 
 @app.route('/success')

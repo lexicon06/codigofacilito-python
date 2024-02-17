@@ -48,6 +48,9 @@ class Product(Model):
     @property
     def price_format(self):
         return f"$ {self.Price} dollars"
+    @property
+    def to_dict(self):
+        return {'name': self.ProductName, 'id': self.ProductID, 'price': self.Price, 'photo': self.photoUrl}
     @classmethod
     def add_product(cls, _name, _price, _photo):
         return Product.create(ProductName = _name, Price = _price, photoUrl = _photo)
@@ -55,7 +58,7 @@ class Product(Model):
     def display_products(cls):
         try:
             products = cls.select()
-            return list(products)
+            return [product.to_dict for product in products]
         except Exception as e:
             print(f'We have a problem {e}')
 

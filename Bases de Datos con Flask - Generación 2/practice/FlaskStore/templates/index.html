@@ -77,22 +77,22 @@
         });
 
         items.push({
-            name:"L4D2 Tank Plush",
-            price:14.43,
-            img: "https://th.bing.com/th/id/OIP.VE82EU6pc7hkb9k0Hq8W_AAAAA?rs=1&pid=ImgDetMain",
-        })
+          name: "L4D2 Tank Plush",
+          price: 14.43,
+          img: "https://th.bing.com/th/id/OIP.VE82EU6pc7hkb9k0Hq8W_AAAAA?rs=1&pid=ImgDetMain",
+        });
 
         items.push({
-            name:"L4D2 Hunter Plush",
-            price:17.32,
-            img: "https://th.bing.com/th/id/OIP.Sk4pDGUIFpz6l0AG2PIlrAAAAA?w=236&h=236&rs=1&pid=ImgDetMain",
-        })
+          name: "L4D2 Hunter Plush",
+          price: 17.32,
+          img: "https://th.bing.com/th/id/OIP.Sk4pDGUIFpz6l0AG2PIlrAAAAA?w=236&h=236&rs=1&pid=ImgDetMain",
+        });
 
         items.push({
-          name:"L4D2 Boomer Plush",
+          name: "L4D2 Boomer Plush",
           price: 15.22,
           img: "https://th.bing.com/th/id/OIP.2Qdi3J5Guht798KzYgL3pQHaHk?rs=1&pid=ImgDetMain",
-        })
+        });
 
         var add = "";
 
@@ -111,6 +111,37 @@
         }
 
         document.getElementById("products").innerHTML = add;
+
+
+
+
+        fetch("./api/v1/products")
+  .then(response => response.json())
+  .then(data => {
+    var current = document.getElementById("products").innerHTML;
+
+    for(let prod in data.products){
+          current += `<div class="border-2 border-gray rounded-lg m-4 flex flex-col justify-between">
+            <img src="${data.products[prod].photo}" alt="peluche" class="p-3">
+            <div>
+                <div class="text-[red] font-bold flex ml-2">
+                    ${data.products[prod].name}
+                </div>
+                <div class="text-[green] font-bold mb-3 ml-2">
+                    $${data.products[prod].price}
+                </div> 
+            </div>
+        </div>`;
+        }
+
+        document.getElementById("products").innerHTML = current;
+
+  })
+  .catch(error => console.error('Error:', error));
+
+
+
+
       </script>
     </main>
 
