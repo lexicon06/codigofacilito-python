@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="w-full h-full">
+<nav class="flex justify-between px-20 items-center">
+    <img src="https://www.paypalobjects.com/digitalassets/c/website/logo/full-text/pp_fc_hl.svg" alt="paypal logo" class="w-24">
+    <div class="">
+<ul class="flex gap-3">
+    <li class="font-bold text-xs text-gray-700">PERSONAL</li>
+    <li class="font-bold text-xs text-gray-700">EMPRESAS</li>
+</ul>
+    </div>
+
+    <div class="">
+        <button class="bg-blue-500 text-white rounded-xl p-2 text-xs font-bold">Iniciar sesión</button>
+        <button class="bg-blue-500 text-white rounded-xl p-2 text-xs font-bold">Abrir cuenta</button>
+    </div>
+
+</nav>
+    <div class="flex justify-center items-center h-screen">
+    <form action='/login' method='post' class='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
+        <div class='mb-4'>
+          <label class='block text-gray-700 text-sm font-bold mb-2' for='email'>Email:</label>
+          <input class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' type='email' id='email' name='email' required>
+        </div>
+        <div class='mb-6'>
+          <label class='block text-gray-700 text-sm font-bold mb-2' for='password'>Password:</label>
+          <input class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline' type='password' id='password' name='password' required>
+        </div>
+        <div class='flex items-center justify-between'>
+          <input class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' type='submit' value='Login'>
+        </div>
+      </form>
+</div>
+</body>
+</html>
