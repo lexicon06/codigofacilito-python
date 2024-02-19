@@ -1,15 +1,53 @@
+
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+
 <div class="container">
    
    {% for product in products %}
 <div class="card">
-   <div class="image"><img src='{{product.image.url}}' alt='product image'/></div>
+   <div class="image"><img src='{{product.image.url}}' alt='product image'/><div class="arrows">
+      <box-icon type='solid' name='up-arrow' class="arr"></box-icon>
+      <div class="box">0</div>
+      <box-icon name='down-arrow' type='solid' class="arr"></box-icon>
+      
+   </div></div>
    <div class="name">{{product.name}}</div>
    <div class="price">$ {{product.price}} USD</div>
+   <div class="purchase">
+
+      <button><box-icon name='cart-add'></box-icon></button>
+      
+   </div>
 </div>
    {% endfor %}
 </div>
 
 <style>
+
+   .quantity{
+      display: flex;
+      flex-direction: row nowrap;
+      justify-content: center;
+      align-items: center;
+      margin-left:2rem;
+   }
+
+   .units{
+      background: white;
+      color:#000;
+      border-top: solid 1px gray;
+      border-bottom: solid 1px gray;
+      width:2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   .purchase{
+      display: flex;
+      flex-flow: row nowrap;
+   }
    .container{
       display: flex;
       flex-direction: row;
@@ -22,6 +60,11 @@
       object-fit: cover;
       border-radius: 0.5vmax;
       letter-spacing: 0.5px;
+   }
+
+   .image{
+      display: flex;
+      flex-flow: row nowrap;
    }
 
    .name, .price{
@@ -41,4 +84,24 @@
       padding:2rem;
       border-radius: 1vmax;
    }
+
+   .arrows{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: center;
+      gap:1rem;
+      margin-left:2rem;
+   }
+
+   .box{
+
+      background-color: #fff;
+      color:#000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size:1.5rem;
+   }
+
 </style>
