@@ -7,34 +7,48 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="w-full h-full">
-<nav class="flex justify-between px-20 items-center">
+<nav class="flex justify-between px-20 items-center py-2 border-b">
     <img src="https://www.paypalobjects.com/digitalassets/c/website/logo/full-text/pp_fc_hl.svg" alt="paypal logo" class="w-24">
     <div class="">
 <ul class="flex gap-3">
-    <li class="font-bold text-xs text-gray-700">PERSONAL</li>
-    <li class="font-bold text-xs text-gray-700">EMPRESAS</li>
+    <li class="font-bold text-xs text-gray-700 uppercase hover:cursor-pointer">personal</li>
+    <li class="font-bold text-xs text-gray-700 uppercase hover:cursor-pointer">empresas</li>
 </ul>
     </div>
 
     <div class="">
-        <button class="bg-blue-500 text-white rounded-xl p-2 text-xs font-bold">Iniciar sesión</button>
-        <button class="bg-blue-500 text-white rounded-xl p-2 text-xs font-bold">Abrir cuenta</button>
+        <button class="bg-white border-solid border border-[#0070BA] text-[#0070BA] rounded-2xl p-2 text-xs font-bold">Iniciar sesión</button>
+        <button class="bg-[#0070BA] text-white rounded-2xl p-2 text-xs font-bold hover:bg-[#005EA6]">Abrir cuenta</button>
     </div>
 
 </nav>
     <div class="flex justify-center items-center h-screen">
-    <form action='/login' method='post' class='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
+    <form action='/login' method='post' class='bg-white rounded-xl px-8 pt-6 pb-8 mb-4 border'>
+        <div class="flex justify-center mb-5">
+            <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-mark-color.svg" alt="login logo" class="w-8">
+        </div>
         <div class='mb-4'>
-          <label class='block text-gray-700 text-sm font-bold mb-2' for='email'>Email:</label>
-          <input class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' type='email' id='email' name='email' required>
+         
+          <input class='appearance-none border border-solid rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline placeholder-[gray] placeholder:text-sm font-medium' type='email' id='email' name='email' placeholder='Correo Electronico o número de Celular'>
+          
         </div>
         <div class='mb-6'>
-          <label class='block text-gray-700 text-sm font-bold mb-2' for='password'>Password:</label>
-          <input class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline' type='password' id='password' name='password' required>
+          
+          <input class='appearance-none border border-solid rounded w-full py-4 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline placeholder-[gray] placeholder:text-sm font-medium' type='password' id='password' name='password' placeholder='Contraseña'>
         </div>
-        <div class='flex items-center justify-between'>
-          <input class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' type='submit' value='Login'>
-        </div>
+         <div class="flex flex-col">
+            <a href="#nowhere" class="font-bold text-[#1072eb]">¿Has olvidado la Contraseña?</a>
+            <button class="mt-3 bg-[#142c8e] text-white rounded-2xl py-1 font-bold w-full px-24 hover:bg-[#1040C1]">Iniciar Sesion</button>
+            <div class="flex flex-row justify-center my-3 items-center gap-2">
+                <div class="bg-[#CBD2D6] w-full h-0.5"></div>
+                <span class="text-[#6C7378] font-bold">o</span>
+                <div class="bg-[#CBD2D6] w-full h-0.5"></div>
+
+            </div>
+
+            <button class="rounded-2xl font-bold border-solid border border-[#142C8E] py-1 px-25 text-[#142C8E] hover:border-1">Abrir Cuenta</button>
+         </div>
+
       </form>
 </div>
 </body>
