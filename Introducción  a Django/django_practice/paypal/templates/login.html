@@ -43,13 +43,27 @@
         <ul class="flex gap-8">
           <li
             class="font-bold text-sm text-gray-600 uppercase hover:cursor-pointer justify-center items-center flex"
+            onmouseenter="rotateElement(document.querySelector('.rota_a'), 180)"
+            onmouseleave="rotateElement(document.querySelector('.rota_a'), 0)"
           >
-            personal <box-icon name="chevron-down" color="gray"></box-icon>
+            personal
+            <box-icon
+              name="chevron-down"
+              color="gray"
+              class="rota_a"
+            ></box-icon>
           </li>
           <li
             class="font-bold text-sm text-gray-600 uppercase hover:cursor-pointer justify-center items-center flex"
+            onmouseenter="rotateElement(document.querySelector('.rota_b'), 180)"
+            onmouseleave="rotateElement(document.querySelector('.rota_b'), 0)"
           >
-            empresas <box-icon name="chevron-down" color="gray"></box-icon>
+            empresas
+            <box-icon
+              name="chevron-down"
+              color="gray"
+              class="rota_b"
+            ></box-icon>
           </li>
         </ul>
       </div>
@@ -81,7 +95,7 @@
           />
         </div>
         <div class="mb-4 relative">
-            <label
+          <label
             class="hidden absolute text-xs text-gray-700 font-medium left-3 top-1"
             for="email"
             id="emailLabel"
@@ -143,8 +157,79 @@
 </html>
 
 <script>
-    function showLabel(labelId) {
-      const label = document.getElementById(labelId);
-      label.classList.remove('hidden');
+  function showLabel(labelId) {
+    const passwordLabel = document.getElementById("passwordLabel");
+    const emailLabel = document.getElementById("emailLabel");
+    const passwordInput = document.getElementById("password");
+    const emailInput = document.getElementById("email");
+
+    if (document.getElementById(labelId) == emailLabel) {
+      emailLabel.classList.remove("hidden");
+      emailLabel.classList.add("smootize");
+      emailInput.placeholder = "";
+      passwordInput.placeholder = "Contraseña";
+      if (passwordInput.value == "") passwordLabel.classList.add("hidden");
+    } else {
+      passwordInput.placeholder = "";
+      emailInput.placeholder = "Correo electrónico o número de celular";
+
+      if (emailInput.value == "") emailLabel.classList.add("hidden");
+      passwordLabel.classList.remove("hidden");
+      passwordLabel.classList.add("smootize");
     }
-  </script>
+  }
+
+  document.addEventListener("click", function (event) {
+    if (!event.target.matches("input")) {
+      const passwordInput = document.getElementById("password");
+      const emailInput = document.getElementById("email");
+      if (passwordInput.value == "") {
+        passwordLabel.classList.add("hidden");
+        passwordInput.placeholder = "Contraseña";
+      }
+      if (emailInput.value == "") {
+        emailLabel.classList.add("hidden");
+        emailInput.placeholder = "Correo electrónico o número de celular";
+      }
+    }
+  });
+
+  function rotateElement(element, degrees) {
+    if (degrees != 0) {
+      element.classList.add("rotate-180");
+      element.classList.remove("rotate-0");
+    } else {
+      element.classList.remove("rotate-180");
+      element.classList.add("rotate-0");
+    }
+  }
+</script>
+
+<style>
+  .rotate-180 {
+    transform: rotate(-180deg);
+    transition: transform 0.5s ease;
+  }
+
+  .rotate-0 {
+    transform: rotate(0deg);
+    transition: transform 0.5s ease;
+  }
+
+  .smootize {
+    animation: appear 0.3s;
+    transition: transform 0.5s ease;
+  }
+
+  @keyframes appear {
+    0% {
+      transform: translateX(20px);
+      transform: translateY(20px);
+      font-size: 1rem;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
