@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Crossfade</title>
+    <style>
+        .image-container {
+            position: relative;
+            width: 300px;
+            height: 200px;
+        }
+
+        .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .image-container img.visible {
+            opacity: 1;
+              -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+  margin-left: 50% !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="https://www.fox4dead.com/avatar.php?steamid=STEAM_1:1:757366322" alt="josselyn" class="visible">
+        <h1 class="visible">f</h1>
+        <img src="https://www.fox4dead.com/avatar.php?steamid=STEAM_1:0:600276902" alt="elizabeth">
+        <h1>no</h1>
+        <img src="https://www.fox4dead.com/avatar/76561198869240269.jpg" alt="Marylin">
+        <h1>yes</h1>
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.image-container img');
+        let currentIndex = 0;
+
+        function crossfade() {
+            images[currentIndex].classList.remove('visible');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('visible');
+        }
+
+        setInterval(crossfade, 3000); // Change image every 3 seconds
+    </script>
+</body>
+</html>
