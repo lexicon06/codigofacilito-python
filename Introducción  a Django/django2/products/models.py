@@ -9,7 +9,7 @@ class Product(models.Model):
     category = models.CharField(max_length=50)
     brand = models.CharField(max_length=50)
 
-    image = models.ImageField(blank = True, null=True, upload_to='products')
+    image = models.ImageField(blank = True, null=True, upload_to='media/products')
 
     discount = models.IntegerField()
 
