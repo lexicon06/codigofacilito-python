@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    :root {
+      --strokeblack: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000,
+        -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .mapbox {
+      border: solid 1px;
+      border-radius: 1vmax;
+      margin: 2rem;
+      background-size: cover;
+      background-repeat: round;
+      isolation: isolate;
+      position: relative;
+      color: #fff;
+    }
+
+    .mapbox::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: url(https://static.vecteezy.com/system/resources/previews/000/152/154/non_2x/black-scratched-grunge-background-vector.jpg);
+      mix-blend-mode: color-dodge;
+      background-size: contain;
+      background-repeat: round;
+      opacity: 0.2;
+      z-index: 1;
+    }
+
+    .map_steaminfo {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .map_steaminfo h1 {
+      text-shadow: var(--strokeblack);
+      color: rgb(255, 0, 0);
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+
+    .map_steaminfo a {
+      text-shadow: var(--strokeblack);
+      font-size: 1rem;
+      color: #ffb7de;
+      text-decoration: none;
+    }
+    .map_steaminfo img {
+      filter: hue-rotate(690deg);
+    }
+
+    .map_steaminfo>small {
+      text-shadow: var(--strokeblack);
+      font-size: 1rem;
+      color: rgb(174, 255, 53);
+    }
+
+    .mapboxinside {
+      backdrop-filter: blur(2px);
+    }
+
+    .mapbox_head {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+      border-bottom: solid 1px #000;
+      padding-bottom: 1rem;
+      margin-block: 1rem;
+    }
+
+    .map_steamimage > img {
+      width: 300px;
+      border: solid 1px whitesmoke;
+      box-shadow: 3px 15px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    .mapdesc {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin-bottom: 1rem;
+      margin-left: 2rem;
+    }
+  </style>
+  <body>
+    <div class="mapbox" style="background-image: url(https://steamuserimages-a.akamaihd.net/ugc/884106516265654961/1F465785251D22E21B3F98E38EBC66478D0D8D24/?imw=512&amp;&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false);">
+      <div class="mapboxinside">
+        <div class="mapbox_head">
+          <div class="map_steaminfo">
+            <h1>City 17</h1>
+            <a href="#">Download Campaign</a>
+            <small
+              ><i class="fa fa-folder" aria-hidden="true"></i> 186.634 MB</small
+            >
+            <img
+              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/5-star_large.png?v=2"
+              alt="rating"
+            />
+          </div>
+          <div class="map_steamimage">
+            <img
+              src="https://steamuserimages-a.akamaihd.net/ugc/884106516265654961/1F465785251D22E21B3F98E38EBC66478D0D8D24/?imw=512&amp;&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false"
+              alt="map"
+            />
+          </div>
+        </div>
+        <div class="mapbox_listofmaps">
+          <div class="mapdesc">
+            <div class="map">Map</div>
+            <div class="displayname">Display Name</div>
+            <div class="campaign">Campaign</div>
+            <div class="map">l4d2_city17_01</div>
+            <div class="displayname">Tunnels</div>
+            <div class="campaign">City 17 v3.2</div>
+            <div class="map">l4d2_city17_01</div>
+            <div class="displayname">Tunnels</div>
+            <div class="campaign">City 17 v3.2</div>
+            <div class="map">l4d2_city17_01</div>
+            <div class="displayname">Tunnels</div>
+            <div class="campaign">City 17 v3.2</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

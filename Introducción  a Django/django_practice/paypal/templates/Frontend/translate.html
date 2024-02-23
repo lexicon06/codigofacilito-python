@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <!--https://fonts.google.com/icons-->
+  </head>
+  <style>
+    :root {
+      --foto: "https://www.fox4dead.com/avatar/76561198108653587.jpg";
+    }
+    .nunito-sans-title {
+      font-family: "Nunito Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: normal;
+      font-style: normal;
+      font-variation-settings: "wdth" 100, "YTLC" 500;
+    }
+  </style>
+  <body>
+    <nav
+      class="flex justify-between flex-row items-center ml-4 border-1 border-b py-2"
+    >
+      <div class="flex gap-2 items-center">
+        <span class="material-symbols-outlined p-2 hover:bg-gray-100 hover:rounded-[100vmax] hover:cursor-pointer"> menu </span>
+        <img
+          src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg"
+          alt="logo"
+          class="ml-1"
+        />
+
+        <h1 class="nunito-sans-title text-[#5F6368] text-xl">Traductor</h1>
+      </div>
+      <div class="flex flex-row items-center gap-3">
+        <span class="material-symbols-outlined text-[#5F6368]"> settings </span>
+        <span class="material-symbols-outlined text-[#5F6368]"> apps </span>
+
+        <img
+          src="https://www.fox4dead.com/avatar/76561198108653587.jpg"
+          alt="bonita"
+          class="rounded-3xl w-9 p-[1px] bg-gray-500 mr-4"
+        />
+      </div>
+    </nav>
+
+    <div class="flex gap-3 ml-20 mt-4">
+      <button
+        class="flex gap-1 items-center bg-white text-[#1967D2] border-1 border border-[lightgray] px-3 py-1.5 rounded-[5px] border-[#202020] font-medium text-sm"
+      >
+        <span class="material-symbols-outlined text-[1rem]"> translate </span> Texto
+      </button>
+      <button
+        class="flex gap-1 items-center bg-white text-[#1967D2] border-1 border border-[lightgray] px-3 py-1.5 rounded-[5px] border-[#202020] font-medium text-sm"
+      >
+        <span class="material-symbols-outlined text-[1rem]"> image </span> Imagenes
+      </button>
+      <button
+        class="flex gap-1 items-center bg-white text-[#1967D2] border-1 border border-[lightgray] px-3 py-1.5 rounded-[5px] border-[#202020] font-medium text-sm"
+      >
+        <span class="material-symbols-outlined text-[1rem]"> description </span>
+        Documentos
+      </button>
+      <button
+        class="flex gap-1 items-center bg-white text-[#1967D2] border-1 border border-[lightgray] px-3 py-1.5 rounded-[5px] border-[#202020] font-medium text-sm"
+      >
+        <span class="material-symbols-outlined text-[1rem]"> newspaper </span>
+        Sitios Web
+      </button>
+    </div>
+
+    <div
+      class="flex flex-row justify-between gap-2 items-center ml-20 mr-20 mt-5"
+    >
+      <div class="flex flex-col relative flex-1">
+        <ul class="flex font-bold text-gray-500 text-sm ml-2">
+          <li class="hover:bg-gray-100 p-2 pb-3 hover:cursor-pointer">Detectar idioma</li>
+          <li class="text-blue-700 border-b-[3px] border-blue-700 hover:bg-gray-100 p-2 pb-3 hover:cursor-pointer">español</li>
+          <li class="hover:bg-gray-100 p-2 pb-3 hover:cursor-pointer">inglés</li>
+          <li class="hover:bg-gray-100 p-2 pb-3 hover:cursor-pointer">alemán</li>
+        </ul>
+        <textarea
+          id="text_origin" class="p-3 bg-white border flex h-40 outline-none rounded-[0.5vmax] resize-none text-xl"
+        ></textarea>
+        <span class="material-symbols-outlined text-sm text-black p-1 px-1.5 absolute right-[-14px] top-2 hover:bg-gray-100 hover:rounded-2xl hover:cursor-pointer">
+          sync_alt
+          </span>
+      </div>
+      
+      <div class="flex flex-col flex-1">
+        
+        <ul class="flex font-bold text-gray-500 text-sm pl-4">
+       
+          <li class="hover:bg-gray-100 p-2 pb-3 hover:cursor-pointer">español</li>
+          <li class="text-blue-700 border-b-[3px] border-blue-700 hover:bg-gray-100 p-2 pb-3 hover:cursor-pointer">inglés</li>
+          <li class="hover:bg-gray-100 p-2 pb-3 hover:cursor-pointer">alemán</li>
+        </ul>
+        <textarea id="text_output"
+          class="p-3 bg-gray-100 border h-40 outline-none rounded-[0.5vmax] resize-none placeholder: font-medium placeholder:text-gray-500 placeholder:text-xl text-xl" placeholder="Traducción"
+        ></textarea>
+      </div>
+    </div>
+    <div class="flex flex-row justify-between">
+      <div class=""></div><small class="mr-20 pr-2 text-xs italic text-gray-600">Enviar Comentarios</small>
+    </div>
+
+    <div class="flex flex-row justify-center px-60 mt-20 gap-14 hover:cursor-pointer">
+      <div class="flex flex-col items-center text-gray-700 gap-2">
+        <span class="material-symbols-outlined p-4 border rounded-[100vmax]">
+          history
+          </span>
+          Historial
+      </div>
+      <div class="flex flex-col items-center text-gray-700 gap-2 hover:cursor-pointer">
+        <span class="material-symbols-outlined p-4 border rounded-[100vmax]">
+            star
+            </span>
+            Guardado
+        </div>
+        <div class="flex flex-col items-center text-gray-700 gap-2 hover:cursor-pointer">
+          <span class="material-symbols-outlined p-4 border rounded-[100vmax]">
+              group
+              </span>
+              Contribuir
+          </div>
+    </div>
+  </body>
+</html>
+<script>
+
+
+document.getElementById("text_origin").addEventListener("input", (e) =>{
+var input = e.target.value;
+translate("es", "en", encodeURIComponent(input));
+
+});
+
+  
+
+async function translate(from, to, text){
+  const apiUrl = `https://www.fox4dead.com/translate/?from=${from}&to=${to}&text=${text}`;
+  await fetch(apiUrl)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data.access);
+      document.getElementById("text_output").value = JSON.parse(data.access)[0][0][0];
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+ }
+</script>
+
