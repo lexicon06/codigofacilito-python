@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpotiClone</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" /><!--https://fonts.google.com/icons-->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black h-screen">
+    <header style="background-color: black;height:30px;color:#fff">
+        <nav>
+<h1>Spotify Clone</h1>
+        </nav>
+    </header>
+    <div class="flex bg-black">
+        <aside id="aside" class="flex flex-col gap-4 ml-2 w-[300px]">
+            <div class="flex gap-2 flex-col bg-[#202020] rounded-md p-4 text-gray-300 ">
+                <div class="flex items-center gap-4 hover:text-white hover:cursor-pointer">
+                    <span class="material-symbols-outlined">
+                        home
+                        </span><p class="font-bold text-sm">Inicio</p>
+                </div>
+                <div class="flex items-center gap-4 hover:text-white hover:cursor-pointer">
+                    <span class="material-symbols-outlined">
+                        search
+                        </span><p class="font-bold text-sm">buscar</p>
+                </div>
+            </div>
+            <div class="flex gap-2 flex-col bg-[#202020] rounded-md p-4 text-gray-300 h-screen">
+                <p>Tu Biblioteca</p>
+            </div>
+        </aside>
+        <div id="dummyresizer" class="bg-black pl-2 cursor-w-resize"></div>
+        <main class="bg-white w-full rounded-md">
+            <h1>hello app</h1>
+        </main>
+    </div>
+</body>
+</html>
+
+<script>
+const dummyResizer = document.getElementById('dummyresizer');
+const myAside = document.getElementById('aside');
+
+let isResizing = false;
+let initialX;
+let asideWidth;
+
+dummyResizer.addEventListener('mousedown', (e) => {
+    isResizing = true;
+    initialX = e.clientX;
+    asideWidth = myAside.offsetWidth;
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (!isResizing) return;
+
+    const deltaX = e.clientX - initialX;
+    const newWidth = asideWidth + deltaX;
+
+    // Set a minimum width to prevent collapsing
+    if (newWidth > 100) {
+        myAside.style.width = `${newWidth}px`;
+    }
+});
+
+document.addEventListener('mouseup', () => {
+    isResizing = false;
+});
+
+</script>
