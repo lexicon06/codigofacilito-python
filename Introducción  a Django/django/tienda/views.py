@@ -1,9 +1,12 @@
 from django.shortcuts import render
 
+from .models import App
+
 # Create your views here.
 def index(request):
     return render(request, "index.html")
 
 
 def test(request):
-    return render(request, "test.html")
+    data = App.objects.all()
+    return render(request, "test.html", {'data': data})
