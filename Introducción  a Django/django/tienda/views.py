@@ -10,3 +10,7 @@ def index(request):
 def test(request):
     data = App.objects.all()
     return render(request, "test.html", {'data': data})
+
+
+def login(request):
+    return render(request, "login.html")
